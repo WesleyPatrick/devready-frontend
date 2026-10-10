@@ -1,0 +1,23 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    groups:
+      react:
+        patterns: ['react', 'react-dom', '@types/react*']
+      redux:
+        patterns: ['@reduxjs/toolkit', 'react-redux']
+      tooling:
+        patterns: ['vite', 'vitest', '@vitejs/*', 'typescript', 'prettier', 'oxlint']
+      testing:
+        patterns: ['@testing-library/*', 'msw', 'jsdom']
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+  - package-ecosystem: docker
+    directory: /
+    schedule:
+      interval: weekly

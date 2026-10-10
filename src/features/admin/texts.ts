@@ -1,0 +1,82 @@
+export const adminTexts = {
+  title: 'Usuários',
+  intro:
+    'Ative, desative, troque o papel das contas e gere senhas provisórias. A sua conta não muda por aqui.',
+  search: {
+    label: 'Buscar por nome ou e-mail',
+    placeholder: 'Nome ou e-mail',
+  },
+  filters: {
+    role: 'Papel',
+    situation: 'Situação',
+    allRoles: 'Todos',
+    allSituations: 'Todas',
+    roles: { CANDIDATE: 'Candidatos', ADMIN: 'Admins' },
+    situations: { true: 'Ativas', false: 'Desativadas' },
+  },
+  caption: 'Usuários da plataforma',
+  columns: {
+    name: 'Pessoa',
+    email: 'E-mail',
+    role: 'Papel',
+    situation: 'Situação',
+    access: 'Formas de entrar',
+    createdAt: 'Cadastro',
+    actions: 'Ações',
+  },
+  roles: { CANDIDATE: 'Candidato', ADMIN: 'Admin' },
+  situation: { active: 'Ativa', inactive: 'Desativada' },
+  access: { password: 'Senha', GOOGLE: 'Google', GITHUB: 'GitHub' },
+  you: 'Você',
+  youHint: 'Sua conta não muda por aqui.',
+  actionsFor: (name: string) => `Ações para ${name}`,
+  actions: {
+    deactivate: 'Desativar',
+    activate: 'Ativar',
+    promote: 'Tornar admin',
+    demote: 'Tornar candidato',
+    resetPassword: 'Gerar senha provisória',
+  },
+  confirm: {
+    deactivate: {
+      title: (name: string) => `Desativar ${name}?`,
+      body: 'A pessoa não consegue entrar até ser reativada. A sessão dela deixa de ser renovada na hora, e o acesso já aberto vale por até 15 minutos.',
+    },
+    activate: {
+      title: (name: string) => `Ativar ${name}?`,
+      body: 'A pessoa volta a poder entrar. As sessões antigas não voltam: ela entra de novo.',
+    },
+    promote: {
+      title: (name: string) => `Tornar ${name} admin?`,
+      body: 'A pessoa passa a ver esta página e a poder mudar as outras contas. O papel novo vale quando a sessão dela for renovada, em até 15 minutos.',
+    },
+    demote: {
+      title: (name: string) => `Tornar ${name} candidato?`,
+      body: 'A pessoa deixa de ver esta página. O papel novo vale quando a sessão dela for renovada, em até 15 minutos.',
+    },
+    resetPassword: {
+      title: (name: string) => `Gerar uma senha provisória para ${name}?`,
+      body: 'A sessão dela deixa de ser renovada na hora, e o acesso já aberto vale por até 15 minutos. No próximo acesso, ela terá de criar uma senha nova.',
+    },
+  },
+  temporaryPassword: {
+    title: (name: string) => `Senha provisória de ${name}`,
+    warning: 'Esta senha não aparece de novo. Passe-a à pessoa por um canal seguro.',
+    copy: 'Copiar',
+    copied: 'Copiada',
+    copiedStatus: 'Senha copiada.',
+    copyFailed: 'Não foi possível copiar. Selecione a senha e copie à mão.',
+    close: 'Fechar',
+  },
+  done: {
+    deactivate: (name: string) => `Conta de ${name} desativada.`,
+    activate: (name: string) => `Conta de ${name} ativada.`,
+    promote: (name: string) => `${name} agora é admin.`,
+    demote: (name: string) => `${name} agora é candidato.`,
+  },
+  empty: 'Nenhum usuário com esses filtros.',
+  loading: 'Carregando usuários…',
+  updating: 'Atualizando…',
+  error: 'Não foi possível carregar os usuários.',
+  noAccess: 'Você não tem mais acesso à gestão de usuários.',
+} as const

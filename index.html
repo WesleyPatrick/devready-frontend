@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DevReady</title>
+    <script>
+      ;(function () {
+        // Mesma regra do theme.ts: sem escolha (ou com valor desconhecido) vale escuro.
+        var dark = true
+        try {
+          var p = localStorage.getItem('devready-theme')
+          dark =
+            p !== 'light' &&
+            (p !== 'system' || window.matchMedia('(prefers-color-scheme: dark)').matches)
+        } catch (e) {}
+        if (dark) document.documentElement.classList.add('dark')
+        document.documentElement.style.colorScheme = dark ? 'dark' : 'light'
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
